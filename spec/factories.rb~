@@ -1,0 +1,8 @@
+FactoryGirl.define do
+  factory :user do
+    name     "laurence1"
+    email    "laurence1@laurence1.com"
+    password "000000"
+    password_confirmation "000000"
+  end
+end
