@@ -1,4 +1,8 @@
 CommunityApp::Application.routes.draw do
+  resources :comments
+
+  resources :videos
+  #get "videos"
    get "users/new"
 
   root to: 'static_pages#home'
