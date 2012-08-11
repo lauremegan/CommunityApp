@@ -1,8 +1,11 @@
 CommunityApp::Application.routes.draw do
 
-  #resources :comments
+  resources :articles do
 
-  #resources :videos
+  resources :comments
+
+  resources :videos
+end
    #get "users/new"
 
   root to: 'static_pages#home'
@@ -28,6 +31,11 @@ CommunityApp::Application.routes.draw do
 resources :videos
 resources :galleries
 resources :paintings
+
+resources :comments
+
+  resources :videos
+
  # resources :users
  # resources :sessions
 
