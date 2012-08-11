@@ -41,8 +41,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-
-    respond_to do |format|
+   respond_to do |format|
       if @user.save
          sign_in @user
          flash[:success] = "Welcome to the Community App!"
@@ -51,6 +50,15 @@ class UsersController < ApplicationController
       else
         format.html { render action: "new" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
+      
+       #def create
+   # @user = User.new(params[:user])
+    #if @user.save
+    #  flash[:success] = "Welcome to the Community App!"
+    #  redirect_to @user
+   # else
+   #   render 'new'
+        
       end
     end
   end
@@ -82,4 +90,4 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
-end
+#end
