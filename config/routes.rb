@@ -19,7 +19,6 @@ CommunityApp::Application.routes.draw do
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
  
-resources :videos
 resources :galleries
 resources :paintings
  # resources :users

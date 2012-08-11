@@ -5,7 +5,9 @@
       <nav>
         <ul class="nav pull-right">
           <li><%= link_to "Home",    root_path %></li>
-          <%= link_to "Create my account", new_user_path %>
+          <li><%= link_to "Video", video_path %></li>
+          <li><%= link_to "Blog", article_path %></li>
+          <%# link_to "Create my account", new_user_path %>
           <li><%= link_to "Sign in", '#' %></li>
         </ul>
       </nav>
