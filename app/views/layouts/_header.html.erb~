@@ -6,9 +6,15 @@
         <ul class="nav pull-right">
           <li><%= link_to "Home",    root_path %></li>
 <<<<<<< HEAD
+<<<<<<< HEAD
           <li><%# link_to 'Video', video_path %><li>
           <li><%# link_to "Videos", vedeos_path %></li>
           
+=======
+          <li><%= link_to "Video", video_path %></li>
+          <li><%= link_to "Blog", article_path %></li>
+          <%# link_to "Create my account", new_user_path %>
+>>>>>>> modeling-usersTests
 =======
           <li><%= link_to "Video", video_path %></li>
           <li><%= link_to "Blog", article_path %></li>
