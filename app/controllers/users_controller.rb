@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
   before_filter :signed_in_user, only: [:edit, :update]
    before_filter :correct_user,   only: [:edit, :update]
+   before_filter :admin_user,     only: :destroy
    before_filter :signed_in_user, only: [:index, :edit, :update]
-    before_filter :admin_user,     only: :destroy
+    
   # GET /users
   # GET /users.json
   def index
@@ -20,6 +21,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(page: params[:page])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -93,11 +95,12 @@ class UsersController < ApplicationController
     #@user.destroy
     User.find(params[:id]).destroy
     flash[:success] = "User destroyed."
+     redirect_to users_url
 
-    respond_to do |format|
-      format.html { redirect_to users_url }
-      format.json { head :no_content }
-    end
+    #respond_to do |format|
+     # format.html { redirect_to users_url }
+     # format.json { head :no_content }
+   # end
   end
 end
 
