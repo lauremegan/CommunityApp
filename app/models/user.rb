@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
                                    dependent:   :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
    #adding an association
-   #has_many :followed_users, through: :relationships, source: :followed
+    has_many :followed_users, through: :relationships, source: :followed
    
    before_save { |user| user.email = email.downcase }
    before_save :create_remember_token

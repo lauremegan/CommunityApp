@@ -1,0 +1,17 @@
+<h1>Listing images</h1>
+
+
+    
+
+<% @images.each do |image| %>
+  <div class="image">
+  <%= image_tag image.upload_url   %><br />
+    <%= image.title %><br />
+    <%= link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete %>
+</div>
+<% end %>
+
+
+
+<p style="clear: both"><br />
+<br /><%= link_to 'Upload Image', new_upload_path %></p>

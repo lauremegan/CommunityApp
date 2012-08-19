@@ -14,11 +14,18 @@
     <section>
       <%= render 'shared/stats' %>
     </section>
+          <section>
+        <%= render 'shared/micropost_form' %>
+      </section>
+      
+      <div class="fb-like" data-href="<%= user_url(@user) %>" data-send="true" data-width="450" data-show-faces="true"></div>
+      
+      
   </aside>
 
 <div class="span8">
     <%= render 'follow_form' if signed_in? %>
-    
+
     <% if @user.microposts.any? %>
       <h3>Microposts (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">

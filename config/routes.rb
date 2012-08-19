@@ -28,6 +28,8 @@ resources :videos
  
 resources :galleries
 resources :paintings
+match 'images/new_upload', to: 'images#new_upload', as: 'new_upload'
+resources :images
 
 
 
