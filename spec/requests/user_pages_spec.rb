@@ -20,6 +20,23 @@ describe "User pages" do
 
     it { should have_selector('h1',    text: 'Sign up') }
     it { should have_selector('title', text: 'Sign up') }
+   
   end
 end
-#end
+
+
+describe User do
+
+before do
+    @user = User.new(name: "Laurence Malonga", email: "laurence@communityapp.com",
+                    
+                  password: "000000", password_confirmation: "000000")
+    
+    it { should respond_to(:name) }
+    it { should respond_to(:email) }
+    it { should respond_to(:password_digest) }
+    it { should respond_to(:password) }
+    it { should respond_to(:password_confirmation) }
+    
+  end 
+end 

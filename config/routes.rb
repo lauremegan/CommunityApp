@@ -1,4 +1,8 @@
 CommunityApp::Application.routes.draw do
+  resources :articles do
+  resources :comments
+end
+
   resources :users do
     member do
       get :following, :followers
@@ -11,7 +15,7 @@ CommunityApp::Application.routes.draw do
   root to: 'static_pages#home'
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :microposts, only: [:create, :destroy]
+  resources :microposts, only: [:create, :edit, :destroy]
   resources :relationships, only: [:create, :destroy]
 
   match '/signup',  to: 'users#new'
@@ -26,8 +30,7 @@ resources :videos
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
  
-resources :galleries
-resources :paintings
+
 match 'images/new_upload', to: 'images#new_upload', as: 'new_upload'
 resources :images
 

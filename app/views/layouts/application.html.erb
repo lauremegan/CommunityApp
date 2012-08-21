@@ -11,14 +11,15 @@
   <body>
     <%= render 'layouts/header' %>
     <div class="container">
+     <div class="span-17 colborder" id="content">
     <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>
       <% end %>
       <%= yield %>
-      
-      
-      <%= render 'layouts/footer' %>
-      <div id="fb-root"></div>
+      	<%= render 'layouts/footer' %>
+      	<div class="span-4 last" id="sidebar"></div>
+<! to show the facebook like boutoms>
+      	<div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;

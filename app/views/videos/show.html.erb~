@@ -7,7 +7,6 @@
 
 <p>
   <b>Embed code:</b>
-<<<<<<< HEAD
   <%#@video.embed_code %>
    <%= sanitize @video.embed_code, tags: ['iframe'] %>
 </p>
@@ -36,11 +35,4 @@
     </div>
   <% end %>
 </div>
-=======
-  <%= @video.embed_code %>
-</p>
 
-
-<%= link_to 'Edit', edit_video_path(@video) %> |
-<%= link_to 'Back', videos_path %>
->>>>>>> modeling-usersTests

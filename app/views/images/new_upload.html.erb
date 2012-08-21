@@ -1,4 +1,5 @@
 <%= direct_upload_form_for @uploader do |f| %>
   <%= f.file_field :upload %>
-  <%= f.submit %>
+  <%# f.submit %>
+  <%= f.submit "upload", class: "btn btn-large btn-primary" %>
 <% end %>

@@ -50,7 +50,9 @@ class ImagesController < ApplicationController
   # POST /images
   # POST /images.json
   def create
+     #@image.user_id == current_user.id
     @image = Image.new(params[:image])
+   
 
     respond_to do |format|
       if @image.save
@@ -84,6 +86,8 @@ class ImagesController < ApplicationController
   def destroy
     @image = Image.find(params[:id])
     @image.destroy
+    flash[:success] = "image destroyed."
+     
 
     respond_to do |format|
       format.html { redirect_to images_url }

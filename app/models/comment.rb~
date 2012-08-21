@@ -1,4 +1,3 @@
 class Comment < ActiveRecord::Base
-  attr_accessible :body
-  belong_to :video
+  attr_accessible :article_id, :body, :email, :name
 end

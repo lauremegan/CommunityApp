@@ -11,33 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120819163332) do
-
-  create_table "articles", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "assets", :force => true do |t|
-    t.integer  "article_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-  end
+ActiveRecord::Schema.define(:version => 20120819182911) do
 
   create_table "comments", :force => true do |t|
-    t.text     "body"
-    t.integer  "video_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "galleries", :force => true do |t|
+    t.integer  "article_id"
     t.string   "name"
+    t.string   "email"
+    t.text     "body"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -58,14 +38,6 @@ ActiveRecord::Schema.define(:version => 20120819163332) do
   end
 
   add_index "microposts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
-
-  create_table "paintings", :force => true do |t|
-    t.integer  "gallery_id"
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "image"
-  end
 
   create_table "relationships", :force => true do |t|
     t.integer  "follower_id"
@@ -88,11 +60,6 @@ ActiveRecord::Schema.define(:version => 20120819163332) do
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
-  create_table "uploaded_files", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
@@ -106,12 +73,5 @@ ActiveRecord::Schema.define(:version => 20120819163332) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
-
-  create_table "videos", :force => true do |t|
-    t.string   "title"
-    t.text     "embed_code"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
 
 end

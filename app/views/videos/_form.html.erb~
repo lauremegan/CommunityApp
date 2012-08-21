@@ -11,16 +11,12 @@
     </div>
   <% end %>
 
-<<<<<<< HEAD
  
   
   <div class="field">
     <%# f.label :title %>
     <% f.label :title %> <small>(Be clever!)</small><br />
-=======
-  <div class="field">
-    <%= f.label :title %><br />
->>>>>>> modeling-usersTests
+
     <%= f.text_field :title %>
   </div>
   <div class="field">

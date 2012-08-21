@@ -5,8 +5,10 @@
 
 <% @images.each do |image| %>
   <div class="image">
-  <%= image_tag image.upload_url(:thumb)   %><br />
+  <%= image_tag image.upload_url   %><br />
     <%= image.title %><br />
+    <%= link_to 'Show', image %> |
+    <%= link_to 'Edit', edit_image_path(image) %>
     <%= link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete %>
 </div>
 <% end %>

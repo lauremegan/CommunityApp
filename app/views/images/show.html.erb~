@@ -2,16 +2,14 @@
 
 <p>
   <b>Name:</b>
-  <%= @image.name %>
+  <%= @image.title %>
 </p>
 
-<p>
-  <b>Email:</b>
-  <%= @image.email %>
-</p>
 
 <p>
-  <%= image_tag @image.avatar_url%><br>
+  <%= image_tag @image.upload_url%><br>
+ 
+ <div class="fb-like" data-href="<%= user_url(@user) %>" data-send="true" data-width="450" data-show-faces="true"></div>
 
 
 <%= link_to 'Edit', edit_image_path(@image) %> |
