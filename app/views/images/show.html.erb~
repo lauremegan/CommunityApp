@@ -9,8 +9,6 @@
 <p>
   <%= image_tag @image.upload_url%><br>
  
- <div class="fb-like" data-href="<%= user_url(@user) %>" data-send="true" data-width="450" data-show-faces="true"></div>
-
-
+ 
 <%= link_to 'Edit', edit_image_path(@image) %> |
 <%= link_to 'Back', images_path %>

@@ -1,4 +1,8 @@
 class VideosController < ApplicationController
+  before_filter :signed_in_user, 
+                 only: [:index, :edit, :update, :destroy, :following, :followers]
+   
+  
   # GET /videos
   # GET /videos.json
   def index

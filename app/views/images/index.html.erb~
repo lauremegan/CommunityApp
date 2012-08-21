@@ -1,17 +1,25 @@
 <h1>Listing images</h1>
-
-
-    
+ 
 
 <% @images.each do |image| %>
   <div class="image">
   <%= image_tag image.upload_url   %><br />
     <%= image.title %><br />
     <%= link_to 'Show', image %> |
-    <%= link_to 'Edit', edit_image_path(image) %>
+    <%= link_to 'Edit', edit_image_path(image)%>
+    
+    <%# if image.user_id? && !current_user?(user) %>
+    | <%# link_to "delete", user, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+    
+    <%# if image.user_id == current_user.id%>  
     <%= link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete %>
+    <%# end %>
 </div>
+
 <% end %>
+
+
 
 
 

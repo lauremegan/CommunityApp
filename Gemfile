@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
 # decide to install all the gem that i needed from the tutorial online
+# adapted from the original source // http://ruby.railstutorial.org/ruby-on-rails-tutorial-book#top
 gem 'rails', '3.2.7'
 gem 'bootstrap-sass', '2.0.0'
 gem 'bcrypt-ruby', '3.0.1'
-gem 'faker', '1.0.1'
+
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem "carrierwave"
@@ -14,6 +15,7 @@ gem "paperclip"
 group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.10.0'
+  gem 'faker', '1.0.1'
 end
 gem 'annotate', '2.5.0', group: :development
 # Gems used only for assets and not required
@@ -30,7 +32,11 @@ group :test, :development do
   gem 'rspec-rails', '2.10.0'
   gem 'guard-rspec', '0.5.5'
   gem 'guard-spork', '0.3.2'
+   gem 'factory_girl_rails', '1.4.0'
   gem 'spork', '0.9.0'
+  gem 'faker', '1.0.1'
+  gem 'launchy'
+   gem 'taps'
 end
 
 group :test do
@@ -42,5 +48,6 @@ end
 
 group :production do
   gem 'pg', '0.12.2'
+  gem 'taps'
 end
 
