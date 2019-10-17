@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 # decide to install all the gem that i needed from the tutorial online
 # adapted from the original source // http://ruby.railstutorial.org/ruby-on-rails-tutorial-book#top
-gem 'rails', '3.2.7'
+gem 'rails', '3.2.17'
 gem 'bootstrap-sass', '2.0.0'
 gem 'bcrypt-ruby', '3.0.1'
 
